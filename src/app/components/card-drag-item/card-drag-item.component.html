@@ -1,0 +1,35 @@
+<div
+    class="card w-96 bg-base-100 shadow-xl cursor-grab"
+    cdkDrag
+    cdkDragBoundary="#card-boundary"
+>
+    <div class="card-body">
+        <h2 class="card-title text-lg">
+            Class:
+            <span class="font-normal">{{ card.name }}</span>
+        </h2>
+        <hr />
+
+        <div class="flex gap-x-7 pt-2 justify-between divide-x-2">
+            <div class="">
+                <h2 class="text-base font-bold">Responsibilities:</h2>
+                <ul>
+                    <li *ngFor="let responsibility of card.responsibilities">
+                        <span *ngIf="responsibility"
+                            >- {{ responsibility }}</span
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pl-4">
+                <h2 class="text-base font-bold">Collaborators:</h2>
+                <ul>
+                    <li *ngFor="let collaborator of card.collaborators">
+                        <span *ngIf="collaborator"> - {{ collaborator }} </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

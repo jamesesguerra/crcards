@@ -1,0 +1,16 @@
+<div class="container mx-auto min-h-screen pb-10" id="card-boundary">
+    <div class="flex mx-auto justify-center gap-x-2 mb-5">
+        <button class="btn" disabled>Reset Cards</button>
+        <button class="btn btn-success" disabled>Add Card</button>
+        <button class="btn btn-primary" (click)="onEditCards()">
+            Edit Cards
+        </button>
+    </div>
+
+    <div class="flex flex-wrap justify-evenly gap-8">
+        <app-card-drag-item
+            *ngFor="let card of cards"
+            [card]="card"
+        ></app-card-drag-item>
+    </div>
+</div>

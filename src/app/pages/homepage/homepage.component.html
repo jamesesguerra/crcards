@@ -1,0 +1,59 @@
+<div class="bg-base-100">
+    <div class="hero min-h-screen">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <h1 class="text-4xl font-bold">Welcome</h1>
+                <p class="py-6">
+                    You can build any number of cards. Not sure what these are
+                    for?
+                    <a class="link link-neutral" href="#faq">Learn more.</a>
+                </p>
+
+                <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Enter number of cards"
+                            class="input input-bordered w-full max-w-xs"
+                            [ngClass]="{ 'input-error': !cardForm.valid && cardForm.dirty }"
+                            formControlName="cardCount"
+                        />
+                        <div
+                            class="label min-[360px]:ml-16"
+                            *ngIf="!cardForm.valid"
+                        >
+                            <span
+                                class="label-text-alt"
+                                *ngIf="cardForm.get('cardCount')?.hasError('required')"
+                                style="color: red"
+                                >Number of cards is required</span
+                            >
+
+                            <span
+                                class="label-text-alt"
+                                *ngIf="cardForm.get('cardCount')?.hasError('min')"
+                                style="color: red"
+                                >Number of cards must be greater than 0</span
+                            >
+
+                            <span
+                                class="label-text-alt"
+                                *ngIf="cardForm.get('cardCount')?.hasError('pattern') && !cardForm.get('cardCount')?.hasError('min')"
+                                style="color: red"
+                                >Must be a valid number greater than 0</span
+                            >
+                        </div>
+                    </div>
+                    <button
+                        class="btn btn-primary mt-5"
+                        type="submit"
+                        [disabled]="!cardForm.valid"
+                    >
+                        Create Cards
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <app-faq></app-faq>
+</div>

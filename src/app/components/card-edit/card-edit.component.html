@@ -1,0 +1,35 @@
+<div class="container mx-auto min-h-screen pb-10">
+    <div
+        class="flex mx-auto justify-center gap-x-2 gap-y-2 mb-5 max-sm:flex-col max-sm:px-10"
+    >
+        <button class="btn" onclick="reset.showModal()">Reset Cards</button>
+        <button class="btn btn-success" (click)="onAddCard()">Add Card</button>
+        <button class="btn btn-primary" (click)="onVisualizeCards()">
+            Visualize Cards
+        </button>
+    </div>
+
+    <dialog id="reset" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg">Reset All Cards</h3>
+            <p class="py-4">
+                Are you sure you want to reset all cards? This action cannot be
+                undone.
+            </p>
+            <div class="modal-action">
+                <form method="dialog" class="flex gap-3">
+                    <button class="btn">Cancel</button>
+                    <button class="btn btn-error" (click)="resetCards()">
+                        Reset
+                    </button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <app-card-item
+        *ngFor="let card of cards; let i = index"
+        [card]="card"
+        [cardNumber]="i + 1"
+    ></app-card-item>
+</div>
