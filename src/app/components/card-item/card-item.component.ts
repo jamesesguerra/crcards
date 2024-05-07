@@ -8,7 +8,6 @@ import { CardService } from "../../services/card.service";
 @Component({
   selector: "app-card-item",
   templateUrl: "./card-item.component.html",
-  styleUrl: "./card-item.component.css",
 })
 export class CardItemComponent implements OnInit, OnDestroy {
   @Input() cardNumber: number;

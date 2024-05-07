@@ -8,7 +8,6 @@ import { CardService } from "../../services/card.service";
 @Component({
   selector: "app-card-visualizer",
   templateUrl: "./card-visualizer.component.html",
-  styleUrl: "./card-visualizer.component.css",
 })
 export class CardVisualizerComponent implements OnInit, OnDestroy {
   router: Router = inject(Router);

@@ -7,7 +7,6 @@ import { CardService } from "../../services/card.service";
 @Component({
   selector: "app-card-page",
   templateUrl: "./card-page.component.html",
-  styleUrl: "./card-page.component.css",
 })
 export class CardPageComponent implements OnInit, OnDestroy {
   cardService: CardService = inject(CardService);

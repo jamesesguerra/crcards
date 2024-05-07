@@ -9,7 +9,6 @@ const INITIAL_CARD_COUNT = 1;
 @Component({
   selector: "app-homepage",
   templateUrl: "./homepage.component.html",
-  styleUrl: "./homepage.component.css",
 })
 export class HomepageComponent implements OnInit {
   cardService: CardService = inject(CardService);
